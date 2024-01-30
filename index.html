@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+
+        }
+        .mainscreen{
+            width: 100%;
+            height: 750px;
+            /* border: 2px solid rgb(0, 168, 132); */
+            position: relative;
+            
+        }
+        .iconbar{
+            width: 25%;
+            height: 50px;
+            /* border: 2px solid black; */
+            background-color: rgb(242, 242, 245);
+            display: flex;
+            justify-content:space-evenly;
+            
+
+        }
+        .profile{
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            margin-top: 7px;
+            margin-left: -8%;
+            align-items: center;
+            
+        }
+        i{
+            margin-top: 18px;
+            /* padding: -5px; */
+            margin-left: -5px;
+
+        }
+        .searchbar{
+            width: 25%;
+            height: 50px;
+            /* border: 2px solid black; */
+            background-color: white;
+            display: flex;
+            
+        }
+        #search{
+            width: 80%;
+            height: 40px;
+            border-radius: 6%;
+            margin-top: 5px;
+            margin-left: 20px;
+            background-color: rgb(242, 242, 245);
+
+        }
+        .searchbar > i{
+            margin-left: 10px;
+
+        }
+        .chats{
+            width: 25%;
+            height: 750px;
+            /* border: 2px solid black; */
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        .inbox{
+            width: 99%;
+            height: 50px;
+            /* border: 2px solid black; */
+            border-bottom: 1px solid gray;
+            background-color: white;
+            display: flex;
+            cursor: pointer;
+        }
+        .inbox>i{
+            margin-left: 10px;
+            color: rgb(0, 168, 132);
+            margin-top: 10px;
+        }
+        .inbox>h4{
+            margin-top: 17px;
+            margin-left: 20px;
+        }
+        #chatpf{
+            height: 43px;
+            width: 50px;
+            border-radius: 100%;
+            margin-top: 4px;
+            margin-left: 10px;
+        }
+        .inbox:hover{
+            background-color: rgb(242, 242, 245);
+        }
+        .showbar{
+            width: 74.6%;
+            height: 50px;
+            /* border: 2px solid black; */
+            border-left: 1px solid gray;
+            background-color: rgb(242, 242, 245);
+            display: flex;
+            /* justify-content:space-evenly; */
+            position: absolute;
+            margin-top: -850px;
+            margin-left: 25.1%;
+
+        }
+        .showmsg{
+            width: 74.6%;
+            height: 810px;
+            /* border: 2px solid blue; */
+            margin-top: -800px;
+            margin-left: 25.2%;
+            position: absolute;
+            background-image: url(https://i.pinimg.com/600x315/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg);
+            overflow: scroll;
+        }
+        .name{
+            margin-top: -45px;
+            margin-left: 65px;
+        }
+        .text{
+            text-align: center;
+            background-color: white;
+            border-radius: 2px;
+            height: 30px;
+            width: 15%;
+            line-height: px;
+            margin-left: 5%;
+            margin-top: 20px
+        }
+        .reply{
+            text-align: center;
+            background-color: rgb(217 253 211);
+            border-radius: 2px;
+            height: 30px;
+            width: 15%;
+            line-height: px;
+            margin-left: 80%;
+            margin-top: 20px
+        }
+        #card{
+            margin-left: 5%;
+        }
+        .nameright{
+            /* border: 2px solid slateblue; */
+            width: 30%;
+            height: 100px;
+            margin-left: 60%;
+            display: flex;
+            justify-content:space-evenly;
+            padding: 0 80px;
+        }
+        
+        #video{
+            border: 1px solid gray;
+            width: 15%;
+            height: 30px;
+            border-radius: 100%;
+            margin-top: 10px;
+            /* padding-left: 10px; */
+            margin-left: 20px;
+        }
+        #video>i{
+            margin-left: 8px;
+            margin-top: 8px;
+        }
+        #video:hover{
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+        
+
+        
+    </style>
+</head>
+
+
+<body>
+    <div class="mainscreen">
+    <div class="iconbar">
+        <img class="profile" src="images/my pic.jpg" alt="pf">
+        <i class="fa-solid fa-users" title="Communities"></i>
+        <i class="fa-regular fa-comment" title="channels"></i>
+        <i class="fa-regular fa-message" title="New chat"></i>
+        <i class="fa-solid fa-ellipsis-vertical" title="Menu"></i>
+
+    </div>
+    <div class="searchbar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input  type="search" name="" id="search" placeholder="Search or start new chat">
+        <i class="fa-solid fa-bars-progress"></i>
+
+    </div>
+    <div class="chats">
+        <div class="inbox">
+            <i class="fa-solid fa-box-archive"></i>
+           <h4>Archived</h4>  
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src="https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/319945646_1065470877935731_1100154720097552010_n.jpg?ccb=11-4&oh=01_AdS26fx9AXNDrqAtjOMDpg3776dkVeCgVxmCVT_FeGbQdQ&oe=65C2237F&_nc_sid=e6ed6c&_nc_cat=111" alt="gp">
+            <h4>SMIT Hasnain Attari MEMBERS</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src="https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/412303696_1031308488177212_74198043297452651_n.jpg?ccb=11-4&oh=01_AdSH_5DzTOXPZQNoxp5K6G_54owD6aTsG0MKDqmSvXzozg&oe=65C20B8C&_nc_sid=e6ed6c&_nc_cat=111" alt="">
+            <h4>SMIT info</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src="https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/176426138_488653089153693_6895969824975060333_n.jpg?ccb=11-4&oh=01_AdTVuzGXE9Tr4QCDllnT3Dbq5e_jgpZ7i9dr6PkXQyMW0A&oe=65C4EA62&_nc_sid=e6ed6c&_nc_cat=111" alt="saad">
+            <h4>Saad</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src="https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/390597565_309622671397673_4436788889954517053_n.jpg?ccb=11-4&oh=01_AdSFgesb-J2dZ2GAwDNo6fYM-igSi9GBt7ei22aquGJ8zw&oe=65C51599&_nc_sid=e6ed6c&_nc_cat=103" alt="Noman">
+            <h4>Noman G2</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src=https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/319744960_794166225453058_8564066291004097307_n.jpg?ccb=11-4&oh=01_AdRWkCtRq8xSrTwLReEcVNcxNq-5BjFbB-XDq8e_GgDvig&oe=65C23244&_nc_sid=e6ed6c&_nc_cat=110 alt="Uzair">
+            <h4>Uzair Bhai</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src=https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/412471836_377312241619223_8077453251099467949_n.jpg?ccb=11-4&oh=01_AdT3NInjh0wvmfkdl1-SchlE7pka_PCFjfl7-a1_59lCAA&oe=65C52647&_nc_sid=e6ed6c&_nc_cat=105 alt="Furqan">
+            <h4>Furqan</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src=https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/415803005_1542273473194752_2175942755439096667_n.jpg?ccb=11-4&oh=01_AdR-pmwZtTiByrUEB5_bTs4W8_wRrarW1kBZ4biFyq9DfQ&oe=65C4FD7B&_nc_sid=e6ed6c&_nc_cat=102 alt="Ali Raza">
+            <h4>Ali Raza</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src=https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/401274116_1337012517698965_845987233974439910_n.jpg?ccb=11-4&oh=01_AdQUekTlMpZM3JxrG2nd03cBSPIyKJPXIJMlQ2omIdvt3g&oe=65C5234D&_nc_sid=e6ed6c&_nc_cat=107 alt="Abdul Hai">
+            <h4>Abdul Hai</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src="https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/319945646_1065470877935731_1100154720097552010_n.jpg?ccb=11-4&oh=01_AdS26fx9AXNDrqAtjOMDpg3776dkVeCgVxmCVT_FeGbQdQ&oe=65C2237F&_nc_sid=e6ed6c&_nc_cat=111" alt="gp">
+            <h4>SMIT Hasnain Attari MEMBERS</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src="https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/412303696_1031308488177212_74198043297452651_n.jpg?ccb=11-4&oh=01_AdSH_5DzTOXPZQNoxp5K6G_54owD6aTsG0MKDqmSvXzozg&oe=65C20B8C&_nc_sid=e6ed6c&_nc_cat=111" alt="">
+            <h4>SMIT info</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src="https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/176426138_488653089153693_6895969824975060333_n.jpg?ccb=11-4&oh=01_AdTVuzGXE9Tr4QCDllnT3Dbq5e_jgpZ7i9dr6PkXQyMW0A&oe=65C4EA62&_nc_sid=e6ed6c&_nc_cat=111" alt="saad">
+            <h4>Saad</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src="https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/390597565_309622671397673_4436788889954517053_n.jpg?ccb=11-4&oh=01_AdSFgesb-J2dZ2GAwDNo6fYM-igSi9GBt7ei22aquGJ8zw&oe=65C51599&_nc_sid=e6ed6c&_nc_cat=103" alt="Noman">
+            <h4>Noman G2</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src=https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/319744960_794166225453058_8564066291004097307_n.jpg?ccb=11-4&oh=01_AdRWkCtRq8xSrTwLReEcVNcxNq-5BjFbB-XDq8e_GgDvig&oe=65C23244&_nc_sid=e6ed6c&_nc_cat=110 alt="Uzair">
+            <h4>Uzair Bhai</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src=https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/412471836_377312241619223_8077453251099467949_n.jpg?ccb=11-4&oh=01_AdT3NInjh0wvmfkdl1-SchlE7pka_PCFjfl7-a1_59lCAA&oe=65C52647&_nc_sid=e6ed6c&_nc_cat=105 alt="Furqan">
+            <h4>Furqan</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src=https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/415803005_1542273473194752_2175942755439096667_n.jpg?ccb=11-4&oh=01_AdR-pmwZtTiByrUEB5_bTs4W8_wRrarW1kBZ4biFyq9DfQ&oe=65C4FD7B&_nc_sid=e6ed6c&_nc_cat=102 alt="Ali Raza">
+            <h4>Ali Raza</h4>
+        </div>
+        <div class="inbox">
+            <img id="chatpf" src=https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/401274116_1337012517698965_845987233974439910_n.jpg?ccb=11-4&oh=01_AdQUekTlMpZM3JxrG2nd03cBSPIyKJPXIJMlQ2omIdvt3g&oe=65C5234D&_nc_sid=e6ed6c&_nc_cat=107 alt="Abdul Hai">
+            <h4>Abdul Hai</h4>
+        </div>
+    </div>
+    <div class="showbar">
+        <div class="nameleft">
+        <img id="chatpf" src="https://media-mct1-1.cdn.whatsapp.net/v/t61.24694-24/176426138_488653089153693_6895969824975060333_n.jpg?ccb=11-4&oh=01_AdTVuzGXE9Tr4QCDllnT3Dbq5e_jgpZ7i9dr6PkXQyMW0A&oe=65C4EA62&_nc_sid=e6ed6c&_nc_cat=111" alt="saad">
+        <p class="name">Saad
+            <br>
+        Online
+        </p>
+    </div>
+    <div class="nameright">
+        <div id="video"><i class="fa-solid fa-video"></i></div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-ellipsis-vertical"></i>  
+         
+    
+    </div>        
+    </div>
+    <div class="showmsg">
+        <p class="text">Asslamualikum Bro</p>
+        <p class="text">Kesa Hai</p>
+        <br>
+        <p class="reply">w/Salam Jani....</p>
+        <P class="reply">Alhamduliilah tu bta</P>
+        <br>
+        <p class="text">han mai bhi thik hun</p>
+        <br>
+        <img id="card" src="images/WhatsApp Image 2024-01-29 at 2.49.25 PM.jpeg" alt="card" width="200px" height="300px"  >
+        <p class="text">ye meri shadi ka card hai</p>
+            <p class="text">lazmi ana hai tune ok???
+        </p>
+
+
+
+    </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+</body>
+</html>
